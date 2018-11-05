@@ -1,19 +1,13 @@
 import com.mitrais.tdd.kata.Sequence;
-import org.hamcrest.CoreMatchers;
 import org.junit.Test;
-
-import java.util.Calendar;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class SequesnceTest {
 
 	@Test
 	public void testEqualsValueOfSequence() {
-		String input = "";
-
 		Sequence sequence = new Sequence();
 		int[] numbers= {6, 9, 15, -2, 92, 11};
 		sequence.addElement(numbers);
@@ -43,5 +37,21 @@ public class SequesnceTest {
 		int[] numbers= {0, 128, -24, -2, 92, 11};
 		sequence.addElement(numbers);
 		assertEquals(128, sequence.getMaximumValue());
+	}
+	
+	@Test
+	public void testNumberElementOfSequence() {
+		Sequence sequence = new Sequence();
+		int[] numbers= {0, 128, -24, -2, 92, 11};
+		sequence.addElement(numbers);
+		assertEquals(6, sequence.getNumberOfElement());
+	}
+	
+	@Test
+	public void testAverageOfSequence() {
+		Sequence sequence = new Sequence();
+		int[] numbers= {6, 9, 15, -2, 92, 11};
+		sequence.addElement(numbers);
+		assertEquals(21.83333, sequence.getAverageOfElement(),0.001);
 	}
 }
